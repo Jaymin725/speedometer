@@ -2,13 +2,14 @@
   --_w: 300px;
   --_h: calc(var(--_w) / 2);
   --_r: var(--_h);
+  margin: 20px auto;
   width: var(--_w);
   aspect-ratio: 2;
   position: relative;
   border: 2px solid gray;
   border-top-left-radius: 50% 100%;
   border-top-right-radius: 50% 100%;
-  background-color: lightgray;
+  background: radial-gradient(at bottom, white 50%, transparent 50%), repeating-conic-gradient(at bottom, white 0deg 17deg, gray 18deg);
 }
 
 .speed:nth-child(1) { --_d: 180deg; }
@@ -27,12 +28,27 @@
   --_x: calc(var(--_r) + var(--_r) * cos(var(--_d)));
   --_y: calc(var(--_r) + var(--_r) * sin(var(--_d)));
   position: absolute;
-  display: inline-block;
+  display: block;
   padding: 2px 8px;
   top: var(--_y);
   left: var(--_x);
+  font-family: monospace;
   background-color: white;
-  border: 1px solid black;
+  border: 2px solid gray;
   border-radius: 4px;
   translate: -50% -50%;
+  rotate: calc(90deg + var(--_d));
+}
+
+.arm {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform-origin: right;
+  translate: -100% -50%;
+}
+
+.input {
+  margin: auto;
+  width: fit-content;
 }
