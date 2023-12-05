@@ -1,0 +1,38 @@
+.meter {
+  --_w: 300px;
+  --_h: calc(var(--_w) / 2);
+  --_r: var(--_h);
+  width: var(--_w);
+  aspect-ratio: 2;
+  position: relative;
+  border: 2px solid gray;
+  border-top-left-radius: 50% 100%;
+  border-top-right-radius: 50% 100%;
+  background-color: lightgray;
+}
+
+.speed:nth-child(1) { --_d: 180deg; }
+.speed:nth-child(2) { --_d: 198deg; }
+.speed:nth-child(3) { --_d: 216deg; }
+.speed:nth-child(4) { --_d: 234deg; }
+.speed:nth-child(5) { --_d: 252deg; }
+.speed:nth-child(6) { --_d: 270deg; }
+.speed:nth-child(7) { --_d: 288deg; }
+.speed:nth-child(8) { --_d: 306deg; }
+.speed:nth-child(9) { --_d: 324deg; }
+.speed:nth-child(10) { --_d: 342deg; }
+.speed:nth-child(11) { --_d: 360deg; }
+
+.speed {
+  --_x: calc(var(--_r) + var(--_r) * cos(var(--_d)));
+  --_y: calc(var(--_r) + var(--_r) * sin(var(--_d)));
+  position: absolute;
+  display: inline-block;
+  padding: 2px 8px;
+  top: var(--_y);
+  left: var(--_x);
+  background-color: white;
+  border: 1px solid black;
+  border-radius: 4px;
+  translate: -50% -50%;
+}
